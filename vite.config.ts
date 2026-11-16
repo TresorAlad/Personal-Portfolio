@@ -1,7 +1,9 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
-const deployBase = process.env.VITE_BASE ?? "/Portfolio/";
+/** GitHub Pages: `/Portfolio/`. Vercel & domaine racine: `/` (ou `VITE_BASE`). */
+const deployBase =
+  process.env.VITE_BASE ?? (process.env.VERCEL ? "/" : "/Portfolio/");
 
 export default defineConfig({
   plugins: [react()],
