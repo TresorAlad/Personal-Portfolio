@@ -8,7 +8,7 @@ export const siteConfig = {
   aboutTitleAccent: "Data & AI",
   aboutTitleMain: "Is My Focus",
   email: "bernardalade92@gmail.com",
-  location: "Sukkur, Sindh, Pakistan",
+  location: "Adidogomé, Lomé, Togo",
   resumePath: "assets/pdf/CV_Tresor_ALADE.pdf",
 };
 
@@ -24,7 +24,7 @@ export const socialLinks = [
     label: "GitHub",
   },
   {
-    href: "https://www.instagram.com/it_s_tresor0?exln=MTJrMDU1Mm1qdno5cg==",
+    href: "https://www.instagram.com/it_s_tresor0/",
     icon: "ri-instagram-line",
     label: "Instagram",
   },
@@ -350,20 +350,22 @@ export const services: ServiceCard[] = [
 
 export type Testimonial = {
   name: string;
+  role?: string;
   image: string;
   text: string;
 };
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Internship Mentor",
-    image: "assets/img/testimonial-1.png",
-    text: "Trésor is a dedicated AI and Data Engineer. His ability to quickly learn and implement new technologies made a strong impact on our projects.",
+    name: "Boris AGBO · TDev Community Lead",
+    image: "assets/img/testimonial-boris-agbo.png",
+    text: "Trésor did excellent work for our community. Working with him made many of our tasks much easier: he listens, delivers cleanly, and takes ownership until things are truly done.",
   },
   {
-    name: "Team Lead",
-    image: "assets/img/testimonial-2.png",
-    text: "Working with Trésor on data and ML projects was seamless. He contributed creative solutions and built reliable pipelines and interfaces.",
+    name: "M. Marcel AMOUSSOUVI",
+    role: "Professeur Merise / Conception SI",
+    image: "assets/img/testimonial-marcel-amoussouvi.png",
+    text: "I truly appreciated Trésor's rigor in both courses. His models, documentation, and project delivery consistently stood out in class.",
   },
   {
     name: "Peer / Colleague",
@@ -371,9 +373,9 @@ export const testimonials: Testimonial[] = [
     text: "Trésor combines technical skills with creativity. His projects reflect attention to detail, clean code, and thoughtful data design.",
   },
   {
-    name: "Project Supervisor",
-    image: "assets/img/testimonial-4.png",
-    text: "Trésor is highly professional and reliable. He adapts quickly, collaborates well, and consistently delivers high-quality engineering work.",
+    name: "Gédéon AMOUSSOU · Internship Supervisor",
+    image: "assets/img/testimonial-gedeon-amoussou.png",
+    text: "We really valued Trésor's time at our center. Through his data work, we found new prospects, gained visibility, and unlocked progress on initiatives that matter for the team.",
   },
 ];
 

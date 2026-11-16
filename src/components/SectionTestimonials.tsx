@@ -3,10 +3,12 @@ import { assetUrl } from "../lib/asset-url";
 
 function TestimonialCard({
   name,
+  role,
   image,
   text,
 }: {
   name: string;
+  role?: string;
   image: string;
   text: string;
 }) {
@@ -22,6 +24,7 @@ function TestimonialCard({
         />
 
         <h2 className="testimonials__name">{name}</h2>
+        {role ? <p className="testimonials__role">{role}</p> : null}
 
         <div className="testimonial__rating">
           <div className="testimonial__stars">
@@ -52,6 +55,7 @@ function TestimonialTrack({ reverse }: { reverse?: boolean }) {
         <TestimonialCard
           key={`${item.name}-${index}`}
           name={item.name}
+          role={item.role}
           image={item.image}
           text={item.text}
         />

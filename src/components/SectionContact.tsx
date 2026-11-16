@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { siteConfig, socialLinks } from "../data/portfolio-data";
 
+const instagramHref =
+  socialLinks.find((link) => link.label === "Instagram")?.href ??
+  "https://www.instagram.com/it_s_tresor0/";
+
 const writeLinks = [
-  { href: "https://Wa.me/+9203155564265", label: "WhatsApp" },
-  { href: "https://m.me/pandacoders1", label: "Messenger" },
-  {
-    href: "https://www.instagram.com/panda_coders/reels/",
-    label: "Instagram",
-  },
+  { href: "https://wa.me/22897050981", label: "WhatsApp" },
+  { href: "https://m.me/61558748865573", label: "Messenger" },
+  { href: instagramHref, label: "Instagram" },
 ];
 
 export function SectionContact() {

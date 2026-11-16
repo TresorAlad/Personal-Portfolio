@@ -1064,7 +1064,15 @@ img {
 .testimonials__name {
   font-size: var(--normal-font-size);
   font-weight: var(--font-regular);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.testimonials__role {
+  font-family: var(--second-font);
+  font-size: var(--smaller-font-size);
+  color: var(--first-color);
+  margin-bottom: 1.25rem;
+  line-height: 1.35;
 }
 
 .testimonial__rating {
