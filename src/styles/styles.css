@@ -1439,6 +1439,14 @@ img {
     display: none;
   }
 
+  .about__image {
+    display: none;
+  }
+
+  .about__container {
+    grid-template-columns: 1fr;
+  }
+
   .projects .section__title,
   .testimonials .section__title {
     text-align: center;
