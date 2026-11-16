@@ -59,9 +59,13 @@ export function SectionHome() {
           download
           target="_blank"
           rel="noreferrer"
-          className="home__cv"
+          className="button button_resume home__cv"
         >
-          Resume <i className="ri-file-list-2-line" />
+          <span className="button__icon" aria-hidden>
+            <i className="ri-file-download-line" />
+          </span>
+          <span className="button__label">Resume</span>
+          <i className="ri-arrow-right-up-long-line button__trailing" aria-hidden />
         </a>
       </div>
     </section>
