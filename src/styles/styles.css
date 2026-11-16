@@ -1508,6 +1508,29 @@ img {
   }
 }
 
+/* Phone only */
+@media screen and (max-width: 767px) {
+  .about {
+    padding-bottom: 3.5rem;
+  }
+
+  .about__container {
+    overflow: visible;
+    padding-bottom: 1.25rem;
+    row-gap: 1.5rem;
+  }
+
+  .about__data .button_resume {
+    justify-self: center;
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .projects {
+    padding-top: 0.5rem;
+  }
+}
+
 /* For small devices */
 @media screen and (max-width: 320px) {
   .container {
