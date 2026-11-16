@@ -10,16 +10,16 @@ export function SectionAbout() {
 
       <div className="about__container container grid">
         <div className="about__data">
-          <h2 className="section__title">
-            <span>Creativity</span>
+          <h2 className="section__title about__title">
+            <span>{siteConfig.aboutTitleAccent}</span>
             <br />
-            Is My Passion
+            {siteConfig.aboutTitleMain}
           </h2>
           <p className="about__description">
-            I&apos;m a <b>MERN Stack Developer</b> passionate about experimenting
-            with new <b> skills and creativity.</b>
+            I&apos;m a <b>Jr. AI &amp; Data Engineer</b> passionate about experimenting
+            with new <b>skills, data, and creativity.</b>
             Driven by learning and curiosity, I&apos;m always looking to explore
-            and learn new development skills.
+            machine learning, analytics, and modern engineering tools.
           </p>
 
           <a
@@ -38,7 +38,7 @@ export function SectionAbout() {
           <div className="blob-animate" />
           <img
             src={assetUrl("assets/img/home-perfil1.png")}
-            alt="Profile Picture"
+            alt={`${siteConfig.name} profile`}
             className="about__profile"
           />
         </div>

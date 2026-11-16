@@ -1,4 +1,4 @@
-# Personal Portfolio - Habib Ur Rehman
+# Personal Portfolio - Kodjo B. Trésor ALADE
 
 Portfolio moderne en **React + Vite + TypeScript**, avec Swiper, Anime.js et ScrollReveal.
 

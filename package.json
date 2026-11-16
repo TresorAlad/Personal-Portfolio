@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:tunnel": "VITE_BASE=/ vite --host --port 5173",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },

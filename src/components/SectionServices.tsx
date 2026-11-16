@@ -1,6 +1,21 @@
 import { useState } from "react";
 import { services } from "../data/portfolio-data";
 
+function ServiceTitle({ title }: { title: string }) {
+  const lines = title.split("\n");
+
+  if (lines.length === 1) {
+    return <h2 className="services__title">{title}</h2>;
+  }
+
+  return (
+    <h2 className="services__title">
+      {lines[0]} <br />
+      {lines[1]}
+    </h2>
+  );
+}
+
 export function SectionServices() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -26,7 +41,7 @@ export function SectionServices() {
               <div className={`blob ${service.blobClass ?? ""}`.trim()} />
 
               <div className="services__data">
-                <h2 className="services__title">{service.title}</h2>
+                <ServiceTitle title={service.title} />
                 <p className="services__description">{service.description}</p>
               </div>
 

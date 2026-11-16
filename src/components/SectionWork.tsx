@@ -2,12 +2,73 @@ import { useState } from "react";
 import {
   educationItems,
   experienceItems,
+  volunteeringItems,
+  type ExperienceKind,
+  type TimeCommitment,
   type WorkItem,
+  type WorkMode,
 } from "../data/portfolio-data";
 
-type WorkTab = "experience" | "education";
+type WorkTab = "experience" | "education" | "volunteering";
 
-function WorkCard({ item }: { item: WorkItem }) {
+const workTabItems: Record<WorkTab, WorkItem[]> = {
+  experience: experienceItems,
+  education: educationItems,
+  volunteering: volunteeringItems,
+};
+
+const kindLabels: Record<ExperienceKind, string> = {
+  employment: "Employment",
+  internship: "Internship",
+  volunteering: "Volunteering",
+};
+
+const workModeLabels: Record<WorkMode, string> = {
+  remote: "Remote",
+  "on-site": "On-site",
+  hybrid: "Hybrid",
+};
+
+const workModeIcons: Record<WorkMode, string> = {
+  remote: "ri-global-line",
+  "on-site": "ri-building-2-line",
+  hybrid: "ri-home-office-line",
+};
+
+const timeCommitmentLabels: Record<TimeCommitment, string> = {
+  "part-time": "Part time",
+  "full-time": "Full time",
+};
+
+function WorkMeta({ item }: { item: WorkItem }) {
+  const kind = item.kind ?? "employment";
+
+  return (
+    <div className="work__meta">
+      <span className="work__tag work__tag_kind">{kindLabels[kind]}</span>
+      {item.timeCommitment ? (
+        <span className="work__tag work__tag_commitment">
+          <i className="ri-time-line" aria-hidden />
+          {timeCommitmentLabels[item.timeCommitment]}
+        </span>
+      ) : null}
+      {item.workMode ? (
+        <span className="work__tag work__tag_mode">
+          <i className={workModeIcons[item.workMode]} aria-hidden />
+          {workModeLabels[item.workMode]}
+        </span>
+      ) : null}
+    </div>
+  );
+}
+
+function WorkCard({
+  item,
+  showMeta,
+}: {
+  item: WorkItem;
+  showMeta: boolean;
+}) {
   const titleLines = item.title.split("\n");
   const yearLines = item.year.split("\n");
 
@@ -15,6 +76,7 @@ function WorkCard({ item }: { item: WorkItem }) {
     <div className="work__card">
       <div className="work__data">
         <div>
+          {showMeta ? <WorkMeta item={item} /> : null}
           <h1 className="work__title">
             {titleLines.length > 1 ? (
               <>
@@ -47,11 +109,11 @@ function WorkCard({ item }: { item: WorkItem }) {
 
 export function SectionWork() {
   const [activeTab, setActiveTab] = useState<WorkTab>("experience");
-  const items =
-    activeTab === "experience" ? experienceItems : educationItems;
+  const items = workTabItems[activeTab];
+  const showMeta = activeTab !== "education";
 
   return (
-    <section className="work section">
+    <section className="work section" id="experience">
       <h2 className="section__title">
         <span>My Work</span>
         <br />
@@ -75,6 +137,14 @@ export function SectionWork() {
           >
             Education <i className="ri-graduation-cap-line" />
           </button>
+
+          <button
+            type="button"
+            className={`work__button ${activeTab === "volunteering" ? "work-active" : ""}`}
+            onClick={() => setActiveTab("volunteering")}
+          >
+            Volunteering <i className="ri-hand-heart-line" />
+          </button>
         </div>
 
         <div className="work__area">
@@ -85,9 +155,19 @@ export function SectionWork() {
             data-content
             id={activeTab}
           >
-            {items.map((item) => (
-              <WorkCard key={`${item.title}-${item.subtitle}`} item={item} />
-            ))}
+            {items.length === 0 ? (
+              <p className="work__description work__empty">
+                No volunteering entries yet.
+              </p>
+            ) : (
+              items.map((item) => (
+                <WorkCard
+                  key={`${item.title}-${item.subtitle}`}
+                  item={item}
+                  showMeta={showMeta}
+                />
+              ))
+            )}
           </div>
         </div>
       </div>

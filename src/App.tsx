@@ -2,6 +2,7 @@ import { CustomCursor } from "./components/CustomCursor";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { SectionAbout } from "./components/SectionAbout";
+import { SectionCertifications } from "./components/SectionCertifications";
 import { SectionContact } from "./components/SectionContact";
 import { SectionHome } from "./components/SectionHome";
 import { SectionProjects } from "./components/SectionProjects";
@@ -25,6 +26,7 @@ export default function App() {
         <SectionAbout />
         <SectionProjects />
         <SectionWork />
+        <SectionCertifications />
         <SectionServices />
         <SectionTestimonials />
         <SectionContact />

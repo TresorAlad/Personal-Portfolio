@@ -41,13 +41,19 @@ export function SectionProjects() {
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
         >
-          {projects.map((project) => (
+          {projects.map((project) => {
+            const projectLink =
+              project.url !== "#"
+                ? project.url
+                : (project.github ?? project.url);
+
+            return (
             <SwiperSlide key={project.number} className="projects__card">
               <div className="blob" />
 
               <div className="projects__number">
                 <h1>{project.number}</h1>
-                <h3>Web</h3>
+                <h3>{project.category ?? "Web"}</h3>
               </div>
 
               <div className="projects__data">
@@ -63,7 +69,7 @@ export function SectionProjects() {
                   className="projects__img"
                 />
                 <a
-                  href={project.url}
+                  href={projectLink}
                   target="_blank"
                   rel="noreferrer"
                   className="projects__button"
@@ -72,7 +78,8 @@ export function SectionProjects() {
                 </a>
               </div>
             </SwiperSlide>
-          ))}
+            );
+          })}
         </Swiper>
       </div>
     </section>

@@ -5,6 +5,8 @@ import { assetUrl } from "../lib/asset-url";
 export function SectionHome() {
   const { profession1Ref, profession2Ref } = useHomeTextAnimation();
   const resumeHref = assetUrl(siteConfig.resumePath);
+  const [nameLine1, nameLine2] = siteConfig.nameLines;
+  const [titleLine1, titleLine2] = siteConfig.titleLines;
 
   return (
     <section className="home section section-top section-two">
@@ -13,8 +15,8 @@ export function SectionHome() {
         <div className="home__data">
           <h3 className="home__greeting">Hello, I&apos;m</h3>
           <h1 className="home__name">
-            Habib <br />
-            Ur Rehman
+            {nameLine1} <br />
+            {nameLine2}
           </h1>
         </div>
 
@@ -22,18 +24,18 @@ export function SectionHome() {
           <div className="blob-animate" />
           <img
             src={assetUrl("assets/img/hero-profile1.png")}
-            alt="Profile Picture"
+            alt={`${siteConfig.name} profile`}
             className="home__profile"
           />
         </div>
 
         <div className="home__info">
-          <h3 className="home__split">Creative</h3>
+          <h3 className="home__split">{siteConfig.heroTagline}</h3>
           <h2 className="home__profession-1" ref={profession1Ref}>
-            MERN Stack
+            {titleLine1}
           </h2>
           <h2 className="home__profession-2" ref={profession2Ref}>
-            Developer
+            {titleLine2}
           </h2>
         </div>
 

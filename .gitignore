@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ancienne copie locale du portfolio (ne pas pousser)
+Portfolio/

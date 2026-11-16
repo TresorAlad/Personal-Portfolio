@@ -8,7 +8,6 @@ const writeLinks = [
     href: "https://www.instagram.com/panda_coders/reels/",
     label: "Instagram",
   },
-  { href: "https://www.tiktok.com/@pandaxcoder", label: "TikTok" },
 ];
 
 export function SectionContact() {
