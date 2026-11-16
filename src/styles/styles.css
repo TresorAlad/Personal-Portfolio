@@ -1436,13 +1436,7 @@ img {
   }
 
   .home__cv {
-    justify-self: center;
-    margin-top: 0.25rem;
-    z-index: 2;
-  }
-
-  .home__cv:hover {
-    transform: translateY(-2px);
+    display: none;
   }
 
   .projects .section__title,
